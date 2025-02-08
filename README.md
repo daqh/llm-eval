@@ -1,5 +1,7 @@
 # LLM-Eval
 
+![Header Image](/asset/header_animation.gif)
+
 This repository contains the unofficial code for the paper "LLM-Eval: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models" by [Lin et al. (2023)](https://arxiv.org/abs/2305.13711).
 
 ## How to setup the environment
