@@ -2,7 +2,9 @@
 
 ![Header Image](/asset/header_animation.gif)
 
-This repository contains the unofficial code for the paper "LLM-Eval: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models" by [Lin et al. (2023)](https://arxiv.org/abs/2305.13711).
+This repository contains unofficial code for the paper "LLM-Eval: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models" by Lin et al. (2023).
+
+This project applies the LLM-Eval framework to the PersonaChat dataset to assess response quality in a conversational context. Using GPT-4o-mini via the OpenAI API, the system generates scores (on a 0-5 or 0-100 scale) for four evaluation metrics: context, grammar, relevance, and appropriateness. The generated scores are then compared with human annotations, and the correlation is measured using Pearson, Spearman, and Kendall’s Tau coefficients.
 
 ## How to setup the environment
 
