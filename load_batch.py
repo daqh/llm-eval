@@ -32,6 +32,9 @@ def load_batch(batch_id):
 
     print()
     print('=' * 5, 'Pearson', '=' * 5)
+    import pandas as pd
+    pd.options.display.float_format = '{:.2f}'.format
+
     print(df[['avg_understandable', 'avg_natural', 'avg_maintains_context', 'avg_engaging', 'avg_uses_knowledge', 'avg_overall', 'content', 'grammar', 'relevance', 'appropriateness']].corr('pearson').iloc[:5, 6:])
     
     print()
