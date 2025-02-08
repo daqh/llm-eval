@@ -5,10 +5,10 @@ from tqdm.auto import tqdm
 DATASET = "pc_usr_data.json"
 BATCHFILE = "batchinput.jsonl"
 
-def store_requests(score_a, score_b):
+def store_requests(score_a, score_b, model_name):
     print("🛢️ Loading dataset from", DATASET)
     dataset = json.load(open(DATASET, "r"))
-    requests = get_requests(dataset, score_a, score_b)
+    requests = get_requests(dataset, score_a, score_b, model_name)
 
     # Store requests in a file according to the format required by OpenAI Batch API
     with open(BATCHFILE, "w") as f:

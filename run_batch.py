@@ -4,10 +4,10 @@ import argparse
 from dotenv import load_dotenv
 load_dotenv()
 
-def run_batch(score_a, score_b):
+def run_batch(score_a, score_b, model_name):
     # Read the dataset and create a batch input file that contains a list of requests
     from store_requests import store_requests, BATCHFILE
-    store_requests(score_a, score_b)
+    store_requests(score_a, score_b, model_name)
 
     print()
 
@@ -34,6 +34,7 @@ if __name__ == "__main__":
 
     parser.add_argument('-a', type=int, default=0, help='Minimum score')
     parser.add_argument('-b', type=int, default=5, help='Maximum score')
+    parser.add_argument('-m', type=str, default="gpt-4o-mini", help='Model name')
 
     args = parser.parse_args()
-    run_batch(args.a, args.b)
+    run_batch(args.a, args.b, args.m)

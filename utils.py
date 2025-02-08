@@ -49,7 +49,7 @@ def get_user_prompt(context, fact, response):
             {response}
     ''')
 
-def get_requests(dataset, score_a, score_b):
+def get_requests(dataset, score_a, score_b, model_name):
     requests = []
     for i, data in enumerate(dataset):
         context = data["context"]
@@ -62,7 +62,7 @@ def get_requests(dataset, score_a, score_b):
                 "method": "POST",
                 "url": "/v1/chat/completions",
                 "body": {
-                    "model": "gpt-4o-mini",
+                    "model": model_name,
                     "messages": [
                         {
                             "role": "system",

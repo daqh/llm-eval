@@ -1,6 +1,3 @@
-import json
-from tqdm.auto import tqdm
-
 # Load environment variables from .env file
 from dotenv import load_dotenv
 load_dotenv()
