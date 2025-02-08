@@ -14,8 +14,8 @@ def load_batch(batch_id):
     client = OpenAI()
     while True:
         batch = client.batches.retrieve(batch_id)
-        print("\t📈 Status", batch.request_counts.completed, "/", batch.request_counts.total, end="\r")
-        if batch.status != "in_progress":
+        print("\t📈 Status", batch.request_counts.completed, "/", batch.request_counts.total, batch.status, end="\r")
+        if batch.status == "completed":
             break
         sleep(10)
 
@@ -24,8 +24,6 @@ def load_batch(batch_id):
 
     with open("batchoutput.jsonl", "w") as f:
         f.write(output_file.text)
-
-    from sklearn.metrics import cohen_kappa_score
 
     from evaluation import evaluation
     df_source = evaluation()
