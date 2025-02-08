@@ -30,10 +30,10 @@ def get_system_prompt(score_a, score_b):
 
         Example output:
         {{
-            "content": 4,
-            "grammar": 5,
-            "relevance": 4,
-            "appropriateness": 5
+            "content": [SCORE],
+            "grammar": [SCORE],
+            "relevance": [SCORE],
+            "appropriateness"[SCORE]
         }}
     ''')
 
