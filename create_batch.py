@@ -1,7 +1,8 @@
 from openai import OpenAI
+from utils import get_client
 
 def create_batch(batch_input_file):
-    client = OpenAI()
+    client = get_client()
 
     batch = client.batches.create(
         input_file_id=batch_input_file.id,

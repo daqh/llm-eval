@@ -1,8 +1,9 @@
 from openai import OpenAI
 from store_requests import BATCHFILE
+from utils import get_client
 
 def upload_batchfile(filename):
-    client = OpenAI()
+    client = get_client()
 
     batch_input_file = client.files.create(
         file=open(filename, "rb"),

@@ -110,3 +110,14 @@ def get_requests(dataset, score_a, score_b, model_name):
             requests.append(request)
     return requests
 
+from  openai import OpenAI, AzureOpenAI
+import os
+
+def get_client():
+    # client = AzureOpenAI(
+    #     api_key=os.getenv("OPENAI_API_KEY"),
+    #     azure_endpoint=os.getenv("OPENAI_ENDPOINT"),
+    #     api_version="2025-01-01"
+    # )
+    client = OpenAI()
+    return client

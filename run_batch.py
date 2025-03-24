@@ -1,8 +1,8 @@
-from openai import OpenAI
 import argparse
 
 from dotenv import load_dotenv
 load_dotenv()
+from utils import get_client
 
 def run_batch(score_a, score_b, model_name):
     # Read the dataset and create a batch input file that contains a list of requests
@@ -19,7 +19,7 @@ def run_batch(score_a, score_b, model_name):
     from create_batch import create_batch
     batch = create_batch(batch_input_file)
 
-    client = OpenAI()
+    client = get_client()
 
     batch = client.batches.retrieve(batch.id)
     print("Batch Details")
