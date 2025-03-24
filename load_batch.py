@@ -9,20 +9,20 @@ import argparse
 from utils import get_client
 
 def load_batch(batch_id):
-    # client = get_client()
-    # while True:
-    #     batch = client.batches.retrieve(batch_id)
-    #     print("\t📈 Status", batch.request_counts.completed, "/", batch.request_counts.total, batch.status, end="\r")
-    #     if batch.status == "completed":
-    #         break
-    #     sleep(10)
+    client = get_client()
+    while True:
+        batch = client.batches.retrieve(batch_id)
+        print("\t📈 Status", batch.request_counts.completed, "/", batch.request_counts.total, batch.status, end="\r")
+        if batch.status == "completed":
+            break
+        sleep(10)
 
-    # output_file_id = batch.output_file_id
-    # print(output_file_id)
-    # output_file = client.files.content(output_file_id)
+    output_file_id = batch.output_file_id
+    print(output_file_id)
+    output_file = client.files.content(output_file_id)
 
-    # with open("batchoutput.jsonl", "w") as f:
-    #     f.write(output_file.text)
+    with open("batchoutput.jsonl", "w") as f:
+        f.write(output_file.text)
 
     from evaluation import evaluation
     df_source = evaluation()
